@@ -1,0 +1,205 @@
+
+
+/* =====================================
+   PHASE 5: INVENTORY MANAGEMENT
+===================================== */
+
+.inventory-primary-btn {
+    background: #f97316;
+    color: white;
+    border: none;
+    padding: 11px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.inventory-primary-btn:hover {
+    background: #ea580c;
+}
+
+.inventory-cancel-btn {
+    background: #eee;
+    color: #444;
+    border: none;
+    padding: 11px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.inventory-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.inventory-summary-card {
+    background: white;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.inventory-summary-card span {
+    color: #777;
+    font-size: 14px;
+}
+
+.inventory-summary-card strong {
+    color: #222;
+    font-size: 27px;
+}
+
+.inventory-form-panel,
+.inventory-table-panel {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 22px;
+}
+
+.inventory-form-panel h3,
+.inventory-table-panel h3 {
+    margin: 0 0 17px;
+}
+
+.inventory-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.inventory-form-grid label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.inventory-form-grid input,
+.inventory-form-grid select,
+.inventory-table-heading input {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+}
+
+.inventory-form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.inventory-table-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.inventory-table-heading h3 {
+    margin: 0;
+}
+
+.inventory-table-heading input {
+    max-width: 250px;
+}
+
+.inventory-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+.inventory-table th,
+.inventory-table td {
+    padding: 13px 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-size: 13px;
+}
+
+.inventory-table th {
+    background: #f8f8f8;
+    color: #555;
+}
+
+.inventory-status {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.inventory-status.in-stock {
+    background: #e4f7e9;
+    color: #218344;
+}
+
+.inventory-status.low-stock {
+    background: #fff2d6;
+    color: #a56800;
+}
+
+.inventory-status.out-stock {
+    background: #ffe5e5;
+    color: #c0392b;
+}
+
+.inventory-action-btn {
+    border: none;
+    border-radius: 6px;
+    padding: 7px 10px;
+    margin: 2px;
+    cursor: pointer;
+    background: #fff0e5;
+    color: #d95d0b;
+    font-weight: 600;
+}
+
+.inventory-action-btn:hover {
+    background: #ffe0c7;
+}
+
+.inventory-empty {
+    text-align: center !important;
+    padding: 25px !important;
+    color: #888;
+}
+
+@media (max-width: 650px) {
+    .inventory-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .inventory-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .inventory-table-heading {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .inventory-table-heading input {
+        max-width: 100%;
+    }
+
+    .inventory-form-actions {
+        flex-wrap: wrap;
+    }
+}

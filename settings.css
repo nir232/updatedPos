@@ -1,0 +1,262 @@
+
+
+/* =====================================
+   PHASE 8: SETTINGS MODULE
+===================================== */
+
+.settings-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.settings-tab {
+    padding: 11px 16px;
+    background: #f3f3f3;
+    color: #555;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.settings-tab.active {
+    background: #f07836;
+    color: #fff;
+}
+
+.settings-panel {
+    display: none;
+    background: #fff;
+    padding: 25px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    margin-bottom: 22px;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-panel h3 {
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 19px;
+}
+
+.settings-description {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 24px;
+}
+
+.settings-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.settings-form-grid .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.settings-form-grid .full-width {
+    grid-column: 1 / -1;
+}
+
+.settings-form-grid label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+}
+
+.settings-form-grid input,
+.settings-form-grid select,
+.settings-form-grid textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    outline: none;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.settings-form-grid input:focus,
+.settings-form-grid select:focus,
+.settings-form-grid textarea:focus {
+    border-color: #f07836;
+}
+
+.settings-save-btn,
+.settings-secondary-btn,
+.settings-danger-btn {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.settings-save-btn {
+    background: #f07836;
+    color: #fff;
+}
+
+.settings-save-btn:hover {
+    background: #dc6425;
+}
+
+.settings-secondary-btn {
+    background: #eeeeee;
+    color: #444;
+}
+
+.settings-danger-btn {
+    background: #dc4545;
+    color: #fff;
+}
+
+.settings-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.settings-checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #555;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.settings-checkbox-group input {
+    accent-color: #f07836;
+    width: 16px;
+    height: 16px;
+}
+
+.data-management-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 9px;
+    margin-bottom: 15px;
+}
+
+.data-management-card h4 {
+    margin-bottom: 7px;
+    color: #333;
+}
+
+.data-management-card p {
+    color: #888;
+    font-size: 13px;
+}
+
+.data-management-card input[type="file"] {
+    max-width: 230px;
+    font-size: 12px;
+}
+
+.danger-card {
+    border-color: #f1caca;
+    background: #fffafa;
+}
+
+.settings-message {
+    display: none;
+    padding: 13px 16px;
+    margin: 15px 0;
+    border-radius: 7px;
+    font-size: 13px;
+}
+
+.settings-message.success {
+    display: block;
+    background: #e5f7ec;
+    color: #21864b;
+}
+
+.settings-message.error {
+    display: block;
+    background: #ffe8e8;
+    color: #c83232;
+}
+
+/* Basic dark appearance for the POS */
+body.dark-theme {
+    background: #1d1d1d;
+    color: #eeeeee;
+}
+
+body.dark-theme .settings-panel,
+body.dark-theme .data-management-card {
+    background: #292929;
+    border-color: #444;
+}
+
+body.dark-theme .settings-panel h3,
+body.dark-theme .data-management-card h4 {
+    color: #eeeeee;
+}
+
+body.dark-theme .settings-description,
+body.dark-theme .data-management-card p {
+    color: #bbbbbb;
+}
+
+body.dark-theme .settings-form-grid label,
+body.dark-theme .settings-checkbox-group label {
+    color: #dddddd;
+}
+
+body.dark-theme .settings-form-grid input,
+body.dark-theme .settings-form-grid select,
+body.dark-theme .settings-form-grid textarea {
+    background: #333;
+    color: #fff;
+    border-color: #555;
+}
+
+@media (max-width: 700px) {
+    .settings-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .settings-form-grid .full-width {
+        grid-column: auto;
+    }
+
+    .data-management-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .settings-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+
+    .settings-tab {
+        white-space: nowrap;
+    }
+
+    .settings-panel {
+        padding: 17px;
+    }
+}

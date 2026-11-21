@@ -1,0 +1,291 @@
+
+
+/* =====================================
+   PHASE 9 & 10: SUPPLIER AND CUSTOMER
+===================================== */
+
+.supplier-summary,
+.customer-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.supplier-summary-card,
+.customer-summary-card {
+    background: #fff;
+    padding: 22px;
+    border: 1px solid #eee;
+    border-radius: 11px;
+}
+
+.supplier-summary-card p,
+.customer-summary-card p {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.supplier-summary-card h2,
+.customer-summary-card h2 {
+    color: #f07836;
+    font-size: 25px;
+}
+
+.supplier-panel,
+.customer-panel {
+    background: #fff;
+    padding: 23px;
+    border: 1px solid #eee;
+    border-radius: 11px;
+    margin-bottom: 22px;
+}
+
+.supplier-panel h3,
+.customer-panel h3 {
+    color: #333;
+    margin-bottom: 18px;
+    font-size: 17px;
+}
+
+.supplier-form-grid,
+.customer-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+    margin-bottom: 20px;
+}
+
+.supplier-form-grid .form-group,
+.customer-form-grid .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.supplier-form-grid .full-width,
+.customer-form-grid .full-width {
+    grid-column: 1 / -1;
+}
+
+.supplier-form-grid label,
+.customer-form-grid label {
+    font-size: 13px;
+    color: #555;
+    font-weight: 600;
+}
+
+.supplier-form-grid input,
+.supplier-form-grid select,
+.supplier-form-grid textarea,
+.customer-form-grid input,
+.customer-form-grid select,
+.customer-form-grid textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    outline: none;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.supplier-form-grid input:focus,
+.supplier-form-grid select:focus,
+.supplier-form-grid textarea:focus,
+.customer-form-grid input:focus,
+.customer-form-grid select:focus,
+.customer-form-grid textarea:focus {
+    border-color: #f07836;
+}
+
+.supplier-form-actions,
+.customer-form-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.supplier-primary-btn,
+.customer-primary-btn,
+.supplier-cancel-btn,
+.customer-cancel-btn {
+    padding: 11px 17px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.supplier-primary-btn,
+.customer-primary-btn {
+    background: #f07836;
+    color: #fff;
+}
+
+.supplier-primary-btn:hover,
+.customer-primary-btn:hover {
+    background: #dc6425;
+}
+
+.supplier-cancel-btn,
+.customer-cancel-btn {
+    background: #eee;
+    color: #444;
+}
+
+.supplier-list-header,
+.customer-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.supplier-list-header input,
+.customer-list-header input {
+    width: 100%;
+    max-width: 280px;
+    padding: 11px 13px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    outline: none;
+}
+
+.supplier-table-wrapper,
+.customer-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.supplier-table,
+.customer-table {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+}
+
+.supplier-table th,
+.supplier-table td,
+.customer-table th,
+.customer-table td {
+    padding: 13px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+}
+
+.supplier-table th,
+.customer-table th {
+    background: #f8f8f8;
+    color: #555;
+    font-weight: 600;
+}
+
+.supplier-table td,
+.customer-table td {
+    color: #555;
+}
+
+.supplier-action-btn,
+.customer-action-btn {
+    padding: 7px 10px;
+    margin: 2px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.supplier-edit-btn,
+.customer-edit-btn {
+    background: #fff0df;
+    color: #c66a1b;
+}
+
+.supplier-delete-btn,
+.customer-delete-btn {
+    background: #ffe5e5;
+    color: #d43e3e;
+}
+
+.supplier-history-btn,
+.customer-history-btn {
+    background: #e8efff;
+    color: #315caa;
+}
+
+.supplier-empty,
+.customer-empty {
+    text-align: center !important;
+    color: #888 !important;
+    padding: 25px !important;
+}
+
+.supplier-due {
+    color: #d13c3c;
+    font-weight: 600;
+}
+
+.supplier-paid {
+    color: #21864b;
+    font-weight: 600;
+}
+
+.customer-type-badge {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 15px;
+    background: #fff0df;
+    color: #b96722;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.customer-type-badge.vip {
+    background: #f2e8ff;
+    color: #7843b5;
+}
+
+@media (max-width: 850px) {
+    .supplier-summary,
+    .customer-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .supplier-summary,
+    .customer-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .supplier-form-grid,
+    .customer-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .supplier-form-grid .full-width,
+    .customer-form-grid .full-width {
+        grid-column: auto;
+    }
+
+    .supplier-list-header,
+    .customer-list-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .supplier-list-header input,
+    .customer-list-header input {
+        max-width: 100%;
+    }
+
+    .supplier-panel,
+    .customer-panel {
+        padding: 16px;
+    }
+}

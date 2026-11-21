@@ -1,0 +1,2010 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant POS | Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/order.css">
+    <link rel="stylesheet" href="css/kitchen.css">
+    <link rel="stylesheet" href="css/billing.css">
+    <link rel="stylesheet" href="css/inventory.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/records.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/suppliers.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-utensils"></i>
+            </div>
+            <div>
+                <h2>FoodPoint</h2>
+                <small>Restaurant POS</small>
+            </div>
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <nav class="navigation">
+
+            <div class="sidebar-label">MAIN MENU</div>
+
+            <button class="nav-link active" data-section="dashboard">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </button>
+
+            <button class="nav-link" data-section="orders">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>New Order</span>
+            </button>
+
+            <button class="nav-link" data-section="kitchen">
+                <i class="fa-solid fa-fire-burner"></i>
+                <span>Kitchen Display</span>
+                
+            </button>
+
+            <button class="nav-link" data-section="billing">
+                <i class="fa-solid fa-receipt"></i>
+                <span>Billing</span>
+            </button>
+
+
+            <div class="sidebar-divider"></div>
+
+            <div class="sidebar-label sidebar-label-management">MANAGEMENT</div>
+
+            <button class="nav-link" data-section="menu">
+                <i class="fa-solid fa-bowl-food"></i>
+                <span>Menu Management</span>
+            </button>
+            
+            
+            
+
+            <button class="nav-link" data-section="inventory">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                <span>Inventory</span>
+            </button>
+
+            <button class="nav-link" data-section="reports">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Reports & Records</span>
+            </button>
+
+            <button class="nav-link" data-section="settings">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </button>
+             <button class="nav-link" data-section="suppliers">
+                <i class="fa-solid fa-warehouse"></i>
+                <span>Supplier Management</span>
+            </button>
+            <button class="nav-link" data-section="customers">
+                <i class="fa-solid fa-user-check"></i>
+                <span>Customer Management</span>
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="user-profile">
+                <div class="avatar">A</div>
+                <div class="user-info">
+                    <strong>Administrator</strong>
+                    <small>Restaurant Manager</small>
+                </div>
+                <i class="fa-solid fa-ellipsis"></i>
+            </div>
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <h2 id="pageTitle">Dashboard</h2>
+                    <p id="pageSubtitle">Welcome back! Here's your restaurant overview.</p>
+                </div>
+            </div>
+
+            <div class="topbar-right">
+                <div class="date-display">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span id="currentDate"></span>
+                </div>
+
+                <button class="notification-btn" title="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="top-avatar">A</div>
+            </div>
+
+        </header>
+
+        <!-- CONTENT SECTIONS -->
+        <div class="content-area">
+
+            <!-- DASHBOARD -->
+            <section class="page-section active" id="dashboard">
+
+                <div class="welcome-banner">
+                    <div>
+                        <span class="welcome-tag">RESTAURANT OVERVIEW</span>
+                        <h1>Good day, Administrator!</h1>
+                        <p>Monitor your restaurant's daily performance here.</p>
+                    </div>
+
+                    <div class="banner-icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                </div>
+
+                <!-- STATISTICS -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span>Total Sales</span>
+                            <div class="stat-icon orange">
+                                <i class="fa-solid fa-wallet"></i>
+                            </div>
+                        </div>
+                        <h2 id="totalSales">৳ 0.00</h2>
+                        <p class="stat-description">Today's recorded sales</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span>Total Orders</span>
+                            <div class="stat-icon blue">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                        </div>
+                        <h2 id="totalOrders">0</h2>
+                        <p class="stat-description">Orders recorded today</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span>Pending Orders</span>
+                            <div class="stat-icon purple">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                        </div>
+                        <h2 id="pendingOrders">0</h2>
+                        <p class="stat-description">Orders awaiting completion</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span>Low Stock Items</span>
+                            <div class="stat-icon red">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                        </div>
+                        <h2 id="lowStockCount">0</h2>
+                        <p class="stat-description">Items requiring attention</p>
+                    </div>
+
+                </div>
+
+                <!-- DASHBOARD GRID -->
+                <div class="dashboard-grid">
+
+                    <!-- RECENT ORDERS -->
+                    <div class="panel orders-panel">
+
+                        <div class="panel-heading">
+                            <div>
+                                <h3>Recent Orders</h3>
+                                <p>Latest restaurant transactions</p>
+                            </div>
+
+                            <button class="view-all-btn"
+                                data-go="reports">
+                                View Records
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Type</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="recentOrdersTable">
+                                    <!-- JavaScript loads orders here -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <!-- LOW STOCK -->
+                    <div class="panel stock-panel">
+
+                        <div class="panel-heading">
+                            <div>
+                                <h3>Low Stock Alert</h3>
+                                <p>Inventory requiring attention</p>
+                            </div>
+
+                            <button class="view-all-btn"
+                                data-go="inventory">
+                                View All
+                            </button>
+                        </div>
+
+                        <div id="lowStockList" class="stock-list">
+                            <!-- JavaScript loads stock here -->
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- QUICK ACTIONS -->
+                <div class="panel quick-actions-panel">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Quick Actions</h3>
+                            <p>Frequently used restaurant operations</p>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+
+                        <button class="quick-action" data-go="orders">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>New Order</span>
+                        </button>
+
+                        <button class="quick-action" data-go="kitchen">
+                            <i class="fa-solid fa-fire-burner"></i>
+                            <span>Kitchen Display</span>
+                        </button>
+
+                        <button class="quick-action" data-go="billing">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                            <span>Create Bill</span>
+                        </button>
+
+                        <button class="quick-action" data-go="inventory">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                            <span>Manage Stock</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- OTHER MODULES -->
+            
+<!-- ORDERING SYSTEM -->
+<section class="page-section" id="orders">
+
+    <div class="ordering-layout">
+
+        <!-- LEFT: FOOD MENU -->
+        <div class="menu-area">
+
+            <div class="order-toolbar">
+                <div>
+                    <h2>Food Menu</h2>
+                    <p>Select food items to add to your order.</p>
+                </div>
+
+                <div class="menu-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="menuSearch"
+                        placeholder="Search food items...">
+                </div>
+            </div>
+
+            <!-- CATEGORIES -->
+            <div class="category-list" id="categoryList">
+                <!-- JavaScript generates categories -->
+            </div>
+
+            <!-- FOOD PRODUCTS -->
+            <div class="product-grid" id="productGrid">
+                <!-- JavaScript generates products -->
+            </div>
+
+        </div>
+
+        <!-- RIGHT: CART -->
+        <div class="cart-panel">
+
+            <div class="cart-heading">
+                <div>
+                    <h3>Current Order</h3>
+                    <p id="cartItemCount">0 items</p>
+                </div>
+
+                <button class="clear-cart-btn" id="clearCartBtn">
+                    <i class="fa-solid fa-trash"></i> Clear
+                </button>
+            </div>
+
+            <!-- ORDER TYPE -->
+            <div class="order-type-group">
+                <label>Order Type</label>
+
+                <select id="orderType">
+                    <option value="Dine-in">Dine-in</option>
+                    <option value="Takeaway">Takeaway</option>
+                    <option value="Delivery">Delivery</option>
+                </select>
+            </div>
+
+            <!-- TABLE -->
+            <div class="order-type-group" id="tableGroup">
+                <label>Select Table</label>
+
+                <select id="tableNumber">
+                    <option value="">Select a table</option>
+                    <option value="Table 1">Table 1</option>
+                    <option value="Table 2">Table 2</option>
+                    <option value="Table 3">Table 3</option>
+                    <option value="Table 4">Table 4</option>
+                    <option value="Table 5">Table 5</option>
+                    <option value="Table 6">Table 6</option>
+                    <option value="Table 7">Table 7</option>
+                    <option value="Table 8">Table 8</option>
+                </select>
+            </div>
+
+            <!-- CUSTOMER -->
+            <div class="order-type-group">
+                <label>Customer Name</label>
+                <input type="text" id="customerName"
+                    placeholder="Enter customer name">
+            </div>
+
+            <!-- CART ITEMS -->
+            <div class="cart-items" id="cartItems">
+                <div class="cart-empty">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <p>Your cart is empty</p>
+                    <small>Select food items to get started.</small>
+                </div>
+            </div>
+
+            <!-- TOTALS -->
+            <div class="cart-summary">
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <strong id="cartSubtotal">৳ 0.00</strong>
+                </div>
+
+                <div class="discount-row">
+                    <label for="discountInput">Discount (৳)</label>
+                    <input type="number" id="discountInput"
+                        value="0" min="0" step="0.01">
+                </div>
+
+                <div class="summary-row grand-total">
+                    <span>Total</span>
+                    <strong id="cartTotal">৳ 0.00</strong>
+                </div>
+
+            </div>
+
+            <button class="submit-order-btn" id="submitOrderBtn">
+                <i class="fa-solid fa-check"></i>
+                Submit Order
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+           
+<section class="page-section" id="kitchen">
+    <div class="page-heading">
+        <div>
+            <h2>Kitchen Display System</h2>
+            <p>Manage incoming orders and track kitchen progress.</p>
+        </div>
+        <button class="refresh-kitchen-btn" id="refreshKitchenBtn">
+            ↻ Refresh Orders
+        </button>
+    </div>
+
+    <div class="kitchen-summary">
+        <div class="kitchen-summary-card">
+            <span>Pending</span>
+            <strong id="kitchenPendingCount">0</strong>
+        </div>
+        <div class="kitchen-summary-card">
+            <span>Preparing</span>
+            <strong id="kitchenPreparingCount">0</strong>
+        </div>
+        <div class="kitchen-summary-card">
+            <span>Ready</span>
+            <strong id="kitchenReadyCount">0</strong>
+        </div>
+        <div class="kitchen-summary-card">
+            <span>Completed</span>
+            <strong id="kitchenCompletedCount">0</strong>
+        </div>
+    </div>
+
+    <div class="kitchen-filter" id="kitchenFilters">
+        <button class="kitchen-filter-btn active" data-filter="All">All Orders</button>
+        <button class="kitchen-filter-btn" data-filter="Pending">Pending</button>
+        <button class="kitchen-filter-btn" data-filter="Preparing">Preparing</button>
+        <button class="kitchen-filter-btn" data-filter="Ready">Ready</button>
+        <button class="kitchen-filter-btn" data-filter="Completed">Completed</button>
+    </div>
+
+    <div class="kitchen-orders-grid" id="kitchenOrdersGrid">
+        <!-- Orders will appear here -->
+    </div>
+</section>
+
+
+           
+<section class="page-section" id="billing">
+
+    <div class="page-heading">
+        <div>
+            <h2>Billing System</h2>
+            <p>Generate bills, record payments and print receipts.</p>
+        </div>
+    </div>
+
+    <div class="billing-layout">
+
+        <!-- ORDER SELECTION -->
+        <div class="billing-order-panel">
+            <h3>Unpaid Orders</h3>
+            <p class="billing-help">Select an order to prepare its bill.</p>
+
+            <div id="unpaidOrdersList">
+                <!-- Orders will appear here -->
+            </div>
+        </div>
+
+        <!-- BILL DETAILS -->
+        <div class="billing-details-panel">
+            <h3>Bill Details</h3>
+
+            <div id="billingEmptyMessage" class="billing-empty">
+                <p>Select an unpaid order to view its bill.</p>
+            </div>
+
+            <div id="billingContent" style="display:none;">
+
+                <div class="billing-order-header">
+                    <div>
+                        <span>Order Number</span>
+                        <strong id="billOrderId">-</strong>
+                    </div>
+                    <div>
+                        <span>Customer</span>
+                        <strong id="billCustomer">-</strong>
+                    </div>
+                    <div>
+                        <span>Order Type</span>
+                        <strong id="billOrderType">-</strong>
+                    </div>
+                </div>
+
+                <h4>Order Items</h4>
+
+                <div class="billing-table-wrap">
+                    <table class="billing-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Qty</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="billingItems"></tbody>
+                    </table>
+                </div>
+
+                <div class="billing-calculation">
+                    <div>
+                        <span>Subtotal</span>
+                        <strong id="billSubtotal">৳0.00</strong>
+                    </div>
+
+                    <div class="billing-discount-input">
+                        <label for="billDiscount">Discount (৳)</label>
+                        <input
+                            type="number"
+                            id="billDiscount"
+                            min="0"
+                            step="0.01"
+                            value="0"
+                        >
+                    </div>
+
+                    <div class="billing-grand-total">
+                        <span>Grand Total</span>
+                        <strong id="billGrandTotal">৳0.00</strong>
+                    </div>
+                </div>
+
+                <div class="payment-section">
+                    <h4>Payment Information</h4>
+
+                    <label for="paymentMethod">Payment Method</label>
+                    <select id="paymentMethod">
+                        <option value="Cash">Cash</option>
+                        <option value="Card">Card</option>
+                        <option value="bKash">bKash</option>
+                        <option value="Nagad">Nagad</option>
+                        <option value="Rocket">Rocket</option>
+                    </select>
+
+                    <label for="amountReceived">Amount Received (৳)</label>
+                    <input
+                        type="number"
+                        id="amountReceived"
+                        min="0"
+                        step="0.01"
+                        placeholder="Enter received amount"
+                    >
+
+                    <div class="payment-result">
+                        <div>
+                            <span>Change</span>
+                            <strong id="paymentChange">৳0.00</strong>
+                        </div>
+                    </div>
+
+                    <button id="completePaymentBtn" class="complete-payment-btn">
+                        Complete Payment
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- PRINTABLE RECEIPT -->
+    <div id="receiptPrintArea" class="receipt-print-area"></div>
+
+    <!-- PAYMENT HISTORY -->
+    <div class="payment-history-panel">
+        <h3>Recent Payments</h3>
+
+        <div class="billing-table-wrap">
+            <table class="billing-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Payment Method</th>
+                        <th>Amount</th>
+                        <th>Payment Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="paymentHistoryBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+
+           
+<section id="menu" class="page-section">
+
+    <div class="page-header">
+        <div>
+            <h2>Menu Management</h2>
+            <p>Manage your restaurant food and drink items.</p>
+        </div>
+    </div>
+
+    <!-- MENU SUMMARY -->
+    <div class="menu-summary">
+
+        <div class="menu-summary-card">
+            <h3>Total Items</h3>
+            <h2 id="menuTotalItems">0</h2>
+        </div>
+
+        <div class="menu-summary-card">
+            <h3>Available Items</h3>
+            <h2 id="menuAvailableItems">0</h2>
+        </div>
+
+        <div class="menu-summary-card">
+            <h3>Unavailable Items</h3>
+            <h2 id="menuUnavailableItems">0</h2>
+        </div>
+
+    </div>
+
+    <!-- ADD / EDIT PRODUCT -->
+    <div class="menu-form-container">
+
+        <h3 id="menuFormTitle">Add New Menu Item</h3>
+
+        <form id="menuItemForm">
+
+            <input type="hidden" id="menuItemId">
+
+            <div class="menu-form-grid">
+
+                <div class="form-group">
+                    <label>Food Name</label>
+                    <input type="text" id="menuItemName"
+                           placeholder="Enter food name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="menuItemCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="Burgers">Burgers</option>
+                        <option value="Pizza">Pizza</option>
+                        <option value="Chicken">Chicken</option>
+                        <option value="Snacks">Snacks</option>
+                        <option value="Drinks">Drinks</option>
+                        <option value="Desserts">Desserts</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Price (৳)</label>
+                    <input type="number" id="menuItemPrice"
+                           placeholder="Enter price" min="0"
+                           step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Food Emoji</label>
+                    <input type="text" id="menuItemIcon"
+                           placeholder="Example: 🍔" value="🍽️">
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Product Image URL (Optional)</label>
+                    <input type="url" id="menuItemImage"
+                           placeholder="Paste image URL">
+                </div>
+
+            </div>
+
+            <div class="menu-form-actions">
+
+                <button type="submit" class="menu-save-btn"
+                        id="menuSaveBtn">
+                    Add Menu Item
+                </button>
+
+                <button type="button" class="menu-cancel-btn"
+                        id="menuCancelBtn" onclick="resetMenuForm()">
+                    Cancel
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- MENU LIST -->
+    <div class="menu-list-container">
+
+        <div class="menu-list-header">
+            <h3>Restaurant Menu</h3>
+
+            <input type="text" id="menuManagementSearch"
+                   placeholder="Search menu items...">
+        </div>
+
+        <div class="menu-table-wrapper">
+
+            <table class="menu-management-table">
+
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Food Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Availability</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="menuManagementTableBody">
+                    <tr>
+                        <td colspan="6">Loading menu...</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+            
+<section class="page-section" id="inventory">
+
+    <div class="page-heading">
+        <div>
+            <h2>Inventory Management</h2>
+            <p>Monitor ingredients, stock purchases and usage.</p>
+        </div>
+        <button class="inventory-primary-btn" id="showAddStockBtn">
+            + Add New Item
+        </button>
+    </div>
+
+    <!-- INVENTORY SUMMARY -->
+    <div class="inventory-summary">
+        <div class="inventory-summary-card">
+            <span>Total Items</span>
+            <strong id="inventoryTotalItems">0</strong>
+        </div>
+        <div class="inventory-summary-card">
+            <span>Low Stock Items</span>
+            <strong id="inventoryLowStock">0</strong>
+        </div>
+        <div class="inventory-summary-card">
+            <span>Out of Stock</span>
+            <strong id="inventoryOutStock">0</strong>
+        </div>
+    </div>
+
+    <!-- ADD STOCK FORM -->
+    <div class="inventory-form-panel" id="addStockPanel" style="display:none;">
+        <h3>Add New Inventory Item</h3>
+
+        <div class="inventory-form-grid">
+            <div>
+                <label for="stockItemName">Item Name</label>
+                <input type="text" id="stockItemName" placeholder="e.g. Chicken">
+            </div>
+
+            <div>
+                <label for="stockItemCategory">Category</label>
+                <select id="stockItemCategory">
+                    <option value="Ingredients">Ingredients</option>
+                    <option value="Meat">Meat</option>
+                    <option value="Dairy">Dairy</option>
+                    <option value="Vegetables">Vegetables</option>
+                    <option value="Beverages">Beverages</option>
+                    <option value="Packaging">Packaging</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="stockItemQuantity">Opening Quantity</label>
+                <input type="number" id="stockItemQuantity" min="0" step="0.01" placeholder="e.g. 10">
+            </div>
+
+            <div>
+                <label for="stockItemUnit">Unit</label>
+                <select id="stockItemUnit">
+                    <option value="kg">Kilogram (kg)</option>
+                    <option value="g">Gram (g)</option>
+                    <option value="liter">Liter</option>
+                    <option value="ml">Milliliter (ml)</option>
+                    <option value="pcs">Pieces</option>
+                    <option value="packet">Packet</option>
+                    <option value="bottle">Bottle</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="stockMinimum">Minimum Stock Level</label>
+                <input type="number" id="stockMinimum" min="0" step="0.01" placeholder="e.g. 5">
+            </div>
+        </div>
+
+        <div class="inventory-form-actions">
+            <button class="inventory-primary-btn" id="saveStockItemBtn">Save Item</button>
+            <button class="inventory-cancel-btn" id="cancelStockItemBtn">Cancel</button>
+        </div>
+    </div>
+
+    <!-- STOCK TABLE -->
+    <div class="inventory-table-panel">
+        <div class="inventory-table-heading">
+            <h3>Current Inventory</h3>
+            <input type="search" id="inventorySearch" placeholder="Search inventory...">
+        </div>
+
+        <div class="inventory-table-wrap">
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Minimum Level</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="inventoryTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- STOCK TRANSACTION FORM -->
+    <div class="inventory-form-panel" id="stockTransactionPanel" style="display:none;">
+        <h3 id="stockTransactionTitle">Stock Transaction</h3>
+
+        <p id="stockTransactionItemName"></p>
+
+        <input type="hidden" id="transactionStockId">
+
+        <div class="inventory-form-grid">
+            <div>
+                <label for="stockTransactionType">Transaction Type</label>
+                <select id="stockTransactionType">
+                    <option value="Purchase">Stock Purchase (Add)</option>
+                    <option value="Usage">Stock Usage (Remove)</option>
+                    <option value="Adjustment">Stock Adjustment (Set Quantity)</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="stockTransactionQuantity">Quantity</label>
+                <input type="number" id="stockTransactionQuantity" min="0.01" step="0.01" placeholder="Enter quantity">
+            </div>
+
+            <div>
+                <label for="stockTransactionNote">Note</label>
+                <input type="text" id="stockTransactionNote" placeholder="Optional note">
+            </div>
+        </div>
+
+        <div class="inventory-form-actions">
+            <button class="inventory-primary-btn" id="saveStockTransactionBtn">Save Transaction</button>
+            <button class="inventory-cancel-btn" id="cancelStockTransactionBtn">Cancel</button>
+        </div>
+    </div>
+
+    <!-- TRANSACTION HISTORY -->
+    <div class="inventory-table-panel">
+        <h3>Stock Transaction History</h3>
+
+        <div class="inventory-table-wrap">
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Item</th>
+                        <th>Type</th>
+                        <th>Quantity</th>
+                        <th>Note</th>
+                    </tr>
+                </thead>
+                <tbody id="stockHistoryBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+
+           
+<section id="reports" class="page-section">
+
+    <div class="page-header">
+        <div>
+            <h2>Reports & Records</h2>
+            <p>Monitor sales, orders, payments and inventory activity.</p>
+        </div>
+    </div>
+
+    <!-- DATE FILTER -->
+    <div class="report-filter-panel">
+
+        <div class="form-group">
+            <label>From Date</label>
+            <input type="date" id="reportStartDate">
+        </div>
+
+        <div class="form-group">
+            <label>To Date</label>
+            <input type="date" id="reportEndDate">
+        </div>
+
+        <div class="form-group">
+            <label>Order Type</label>
+            <select id="reportOrderType">
+                <option value="all">All Types</option>
+                <option value="Dine-in">Dine-in</option>
+                <option value="Takeaway">Takeaway</option>
+                <option value="Delivery">Delivery</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Order Status</label>
+            <select id="reportOrderStatus">
+                <option value="all">All Statuses</option>
+                <option value="Pending">Pending</option>
+                <option value="Preparing">Preparing</option>
+                <option value="Ready">Ready</option>
+                <option value="Completed">Completed</option>
+            </select>
+        </div>
+
+        <div class="report-filter-actions">
+            <button type="button" id="applyReportFilters">
+                Apply Filters
+            </button>
+
+            <button type="button" id="resetReportFilters">
+                Reset
+            </button>
+        </div>
+
+    </div>
+
+    <!-- REPORT SUMMARY -->
+    <div class="report-summary-grid">
+
+        <div class="report-card">
+            <p>Total Revenue</p>
+            <h2 id="reportTotalRevenue">৳0.00</h2>
+        </div>
+
+        <div class="report-card">
+            <p>Paid Orders</p>
+            <h2 id="reportPaidOrders">0</h2>
+        </div>
+
+        <div class="report-card">
+            <p>Outstanding Orders</p>
+            <h2 id="reportUnpaidOrders">0</h2>
+        </div>
+
+        <div class="report-card">
+            <p>Average Order Value</p>
+            <h2 id="reportAverageOrder">৳0.00</h2>
+        </div>
+
+    </div>
+
+    <!-- EXPORT BUTTONS -->
+    <div class="report-toolbar">
+
+        <h3>Restaurant Reports</h3>
+
+        <div>
+            <button type="button" id="exportOrderReport">
+                Export Orders CSV
+            </button>
+
+            <button type="button" id="printReport">
+                Print Report
+            </button>
+        </div>
+
+    </div>
+
+    <!-- DAILY SALES -->
+    <div class="report-panel">
+
+        <h3>Daily Sales Summary</h3>
+
+        <div class="report-table-wrapper">
+            <table class="report-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Paid Orders</th>
+                        <th>Revenue</th>
+                    </tr>
+                </thead>
+
+                <tbody id="dailySalesTable">
+                    <tr>
+                        <td colspan="3">No sales records found.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- BEST SELLING PRODUCTS -->
+    <div class="report-panel">
+
+        <h3>Best-Selling Products</h3>
+
+        <div class="report-table-wrapper">
+            <table class="report-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity Sold</th>
+                        <th>Total Sales</th>
+                    </tr>
+                </thead>
+
+                <tbody id="bestSellingTable">
+                    <tr>
+                        <td colspan="3">No product records found.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- ORDER RECORDS -->
+    <div class="report-panel">
+
+        <div class="report-panel-heading">
+            <h3>Order Records</h3>
+
+            <input type="text" id="reportSearch"
+                   placeholder="Search order or customer...">
+        </div>
+
+        <div class="report-table-wrapper">
+            <table class="report-table">
+
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Payment</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="orderRecordsTable">
+                    <tr>
+                        <td colspan="7">No order records found.</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+    <!-- PAYMENT RECORDS -->
+    <div class="report-panel">
+
+        <div class="report-panel-heading">
+            <h3>Payment Records</h3>
+
+            <button type="button" id="exportPaymentReport">
+                Export Payments CSV
+            </button>
+        </div>
+
+        <div class="report-table-wrapper">
+            <table class="report-table">
+
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Payment Method</th>
+                        <th>Amount Paid</th>
+                        <th>Amount Received</th>
+                        <th>Change</th>
+                        <th>Payment Date</th>
+                    </tr>
+                </thead>
+
+                <tbody id="paymentRecordsTable">
+                    <tr>
+                        <td colspan="6">No payment records found.</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+    <!-- INVENTORY TRANSACTIONS -->
+    <div class="report-panel">
+
+        <div class="report-panel-heading">
+            <h3>Inventory Transaction Records</h3>
+
+            <button type="button" id="exportStockReport">
+                Export Stock CSV
+            </button>
+        </div>
+
+        <div class="report-table-wrapper">
+            <table class="report-table">
+
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Item</th>
+                        <th>Transaction</th>
+                        <th>Quantity</th>
+                        <th>Note</th>
+                    </tr>
+                </thead>
+
+                <tbody id="stockRecordsTable">
+                    <tr>
+                        <td colspan="5">No inventory transactions found.</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+</section>
+
+
+           
+<section id="settings" class="page-section">
+
+    <div class="page-header">
+        <div>
+            <h2>Settings</h2>
+            <p>Configure your restaurant and POS preferences.</p>
+        </div>
+    </div>
+
+    <!-- SETTINGS NAVIGATION -->
+    <div class="settings-tabs">
+        <button type="button" class="settings-tab active"
+                data-settings-tab="restaurantSettings">
+            Restaurant Profile
+        </button>
+
+        <button type="button" class="settings-tab"
+                data-settings-tab="businessSettings">
+            Business Settings
+        </button>
+
+        <button type="button" class="settings-tab"
+                data-settings-tab="receiptSettings">
+            Receipt Settings
+        </button>
+
+        <button type="button" class="settings-tab"
+                data-settings-tab="orderSettings">
+            Order Settings
+        </button>
+
+        <button type="button" class="settings-tab"
+                data-settings-tab="systemSettings">
+            System Preferences
+        </button>
+
+        <button type="button" class="settings-tab"
+                data-settings-tab="dataSettings">
+            Data Management
+        </button>
+    </div>
+
+    <!-- RESTAURANT PROFILE -->
+    <div class="settings-panel active" id="restaurantSettings">
+
+        <h3>Restaurant Profile</h3>
+        <p class="settings-description">
+            Manage your restaurant's basic information.
+        </p>
+
+        <form id="restaurantProfileForm">
+
+            <div class="settings-form-grid">
+
+                <div class="form-group">
+                    <label>Restaurant Name</label>
+                    <input type="text" id="settingRestaurantName"
+                           placeholder="FoodPoint Restaurant" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="settingPhone"
+                           placeholder="+8801XXXXXXXXX">
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="settingEmail"
+                           placeholder="restaurant@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Website</label>
+                    <input type="url" id="settingWebsite"
+                           placeholder="https://example.com">
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Restaurant Address</label>
+                    <textarea id="settingAddress" rows="3"
+                              placeholder="Enter restaurant address"></textarea>
+                </div>
+
+            </div>
+
+            <button type="submit" class="settings-save-btn">
+                Save Restaurant Profile
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- BUSINESS SETTINGS -->
+    <div class="settings-panel" id="businessSettings">
+
+        <h3>Business Settings</h3>
+        <p class="settings-description">
+            Configure currency, tax and service charges.
+        </p>
+
+        <form id="businessSettingsForm">
+
+            <div class="settings-form-grid">
+
+                <div class="form-group">
+                    <label>Currency</label>
+                    <select id="settingCurrency">
+                        <option value="BDT">BDT (৳)</option>
+                        <option value="USD">USD ($)</option>
+                        <option value="INR">INR (₹)</option>
+                        <option value="EUR">EUR (€)</option>
+                        <option value="GBP">GBP (£)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Tax Percentage (%)</label>
+                    <input type="number" id="settingTax"
+                           min="0" max="100" step="0.01" value="0">
+                </div>
+
+                <div class="form-group">
+                    <label>Service Charge (%)</label>
+                    <input type="number" id="settingServiceCharge"
+                           min="0" max="100" step="0.01" value="0">
+                </div>
+
+                <div class="form-group">
+                    <label>Default Order Type</label>
+                    <select id="settingDefaultOrderType">
+                        <option value="Dine-in">Dine-in</option>
+                        <option value="Takeaway">Takeaway</option>
+                        <option value="Delivery">Delivery</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <button type="submit" class="settings-save-btn">
+                Save Business Settings
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- RECEIPT SETTINGS -->
+    <div class="settings-panel" id="receiptSettings">
+
+        <h3>Receipt Settings</h3>
+        <p class="settings-description">
+            Customize the information printed on customer receipts.
+        </p>
+
+        <form id="receiptSettingsForm">
+
+            <div class="settings-form-grid">
+
+                <div class="form-group full-width">
+                    <label>Receipt Welcome Message</label>
+                    <input type="text" id="settingReceiptHeader"
+                           placeholder="Welcome to FoodPoint!">
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Receipt Footer Message</label>
+                    <textarea id="settingReceiptFooter" rows="3"
+                              placeholder="Thank you for visiting us!"></textarea>
+                </div>
+
+            </div>
+
+            <div class="settings-checkbox-group">
+
+                <label>
+                    <input type="checkbox" id="settingShowCustomer">
+                    Show customer name on receipt
+                </label>
+
+                <label>
+                    <input type="checkbox" id="settingShowPhone">
+                    Show restaurant phone number on receipt
+                </label>
+
+                <label>
+                    <input type="checkbox" id="settingShowAddress">
+                    Show restaurant address on receipt
+                </label>
+
+            </div>
+
+            <button type="submit" class="settings-save-btn">
+                Save Receipt Settings
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- ORDER SETTINGS -->
+    <div class="settings-panel" id="orderSettings">
+
+        <h3>Order Settings</h3>
+        <p class="settings-description">
+            Customize order identification and default behavior.
+        </p>
+
+        <form id="orderSettingsForm">
+
+            <div class="settings-form-grid">
+
+                <div class="form-group">
+                    <label>Order ID Prefix</label>
+                    <input type="text" id="settingOrderPrefix"
+                           maxlength="10" placeholder="ORD-">
+                </div>
+
+                <div class="form-group">
+                    <label>Default Table Number</label>
+                    <select id="settingDefaultTable">
+                        <option value="1">Table 1</option>
+                        <option value="2">Table 2</option>
+                        <option value="3">Table 3</option>
+                        <option value="4">Table 4</option>
+                        <option value="5">Table 5</option>
+                        <option value="6">Table 6</option>
+                        <option value="7">Table 7</option>
+                        <option value="8">Table 8</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <button type="submit" class="settings-save-btn">
+                Save Order Settings
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- SYSTEM PREFERENCES -->
+    <div class="settings-panel" id="systemSettings">
+
+        <h3>System Preferences</h3>
+        <p class="settings-description">
+            Configure the appearance and behavior of your POS.
+        </p>
+
+        <form id="systemPreferencesForm">
+
+            <div class="settings-form-grid">
+
+                <div class="form-group">
+                    <label>Dashboard Theme</label>
+                    <select id="settingTheme">
+                        <option value="light">Light Theme</option>
+                        <option value="dark">Dark Theme</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="settings-checkbox-group">
+
+                <label>
+                    <input type="checkbox" id="settingConfirmDelete">
+                    Ask before deleting records
+                </label>
+
+            </div>
+
+            <button type="submit" class="settings-save-btn">
+                Save System Preferences
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- DATA MANAGEMENT -->
+    <div class="settings-panel" id="dataSettings">
+
+        <h3>Data Management</h3>
+        <p class="settings-description">
+            Back up or restore your restaurant POS data.
+        </p>
+
+        <div class="data-management-card">
+
+            <div>
+                <h4>Export POS Data</h4>
+                <p>Download your restaurant data as a JSON backup.</p>
+            </div>
+
+            <button type="button" id="exportPOSData"
+                    class="settings-save-btn">
+                Export Backup
+            </button>
+
+        </div>
+
+        <div class="data-management-card">
+
+            <div>
+                <h4>Import POS Backup</h4>
+                <p>Restore your data from a previously exported JSON file.</p>
+            </div>
+
+            <input type="file" id="importPOSFile"
+                   accept=".json,application/json">
+
+            <button type="button" id="importPOSData"
+                    class="settings-secondary-btn">
+                Import Backup
+            </button>
+
+        </div>
+
+        <div class="data-management-card danger-card">
+
+            <div>
+                <h4>Reset POS Data</h4>
+                <p>Remove the current restaurant data and reload sample data.</p>
+            </div>
+
+            <button type="button" id="resetPOSData"
+                    class="settings-danger-btn">
+                Reset POS
+            </button>
+
+        </div>
+
+    </div>
+
+    <div id="settingsMessage" class="settings-message"></div>
+
+</section>
+
+
+<!-- =====================================
+     PHASE 9: SUPPLIER MANAGEMENT
+===================================== -->
+
+<section id="suppliers" class="page-section">
+
+    <div class="page-header">
+        <div>
+            <h2>Supplier Management</h2>
+            <p>Manage suppliers, purchases and outstanding balances.</p>
+        </div>
+    </div>
+
+    <!-- SUPPLIER SUMMARY -->
+    <div class="supplier-summary">
+
+        <div class="supplier-summary-card">
+            <p>Total Suppliers</p>
+            <h2 id="totalSuppliers">0</h2>
+        </div>
+
+        <div class="supplier-summary-card">
+            <p>Total Purchases</p>
+            <h2 id="supplierTotalPurchases">৳0.00</h2>
+        </div>
+
+        <div class="supplier-summary-card">
+            <p>Outstanding Balance</p>
+            <h2 id="supplierOutstanding">৳0.00</h2>
+        </div>
+
+    </div>
+
+    <!-- ADD SUPPLIER FORM -->
+    <div class="supplier-panel">
+
+        <h3 id="supplierFormTitle">Add New Supplier</h3>
+
+        <form id="supplierForm">
+
+            <input type="hidden" id="supplierId">
+
+            <div class="supplier-form-grid">
+
+                <div class="form-group">
+                    <label>Supplier / Company Name</label>
+                    <input type="text" id="supplierName"
+                           placeholder="Enter supplier name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Contact Person</label>
+                    <input type="text" id="supplierContact"
+                           placeholder="Enter contact person">
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="supplierPhone"
+                           placeholder="Enter phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="supplierEmail"
+                           placeholder="supplier@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Supplier Category</label>
+                    <select id="supplierCategory">
+                        <option value="Food">Food</option>
+                        <option value="Beverages">Beverages</option>
+                        <option value="Packaging">Packaging</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Equipment">Equipment</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" id="supplierAddress"
+                           placeholder="Enter supplier address">
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Notes</label>
+                    <textarea id="supplierNotes" rows="3"
+                              placeholder="Additional supplier information"></textarea>
+                </div>
+
+            </div>
+
+            <div class="supplier-form-actions">
+                <button type="submit" class="supplier-primary-btn"
+                        id="supplierSaveBtn">
+                    Save Supplier
+                </button>
+
+                <button type="button" class="supplier-cancel-btn"
+                        onclick="resetSupplierForm()">
+                    Cancel
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- SUPPLIER LIST -->
+    <div class="supplier-panel">
+
+        <div class="supplier-list-header">
+            <h3>Supplier Records</h3>
+
+            <input type="text" id="supplierSearch"
+                   placeholder="Search suppliers...">
+        </div>
+
+        <div class="supplier-table-wrapper">
+
+            <table class="supplier-table">
+
+                <thead>
+                    <tr>
+                        <th>Supplier</th>
+                        <th>Contact Person</th>
+                        <th>Phone</th>
+                        <th>Category</th>
+                        <th>Purchases</th>
+                        <th>Outstanding</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="supplierTableBody">
+                    <tr>
+                        <td colspan="7">Loading suppliers...</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- RECORD PURCHASE -->
+    <div class="supplier-panel">
+
+        <h3>Record Supplier Purchase</h3>
+
+        <form id="supplierPurchaseForm">
+
+            <div class="supplier-form-grid">
+
+                <div class="form-group">
+                    <label>Select Supplier</label>
+                    <select id="purchaseSupplier" required>
+                        <option value="">Select Supplier</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Purchase Reference / Invoice</label>
+                    <input type="text" id="purchaseReference"
+                           placeholder="Invoice number">
+                </div>
+
+                <div class="form-group">
+                    <label>Purchase Date</label>
+                    <input type="date" id="purchaseDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Total Purchase Amount (৳)</label>
+                    <input type="number" id="purchaseAmount"
+                           min="0.01" step="0.01"
+                           placeholder="Enter amount" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Amount Paid (৳)</label>
+                    <input type="number" id="purchasePaid"
+                           min="0" step="0.01"
+                           placeholder="Enter paid amount" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Payment Method</label>
+                    <select id="purchasePaymentMethod">
+                        <option value="Cash">Cash</option>
+                        <option value="Bank Transfer">Bank Transfer</option>
+                        <option value="bKash">bKash</option>
+                        <option value="Nagad">Nagad</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Purchase Notes</label>
+                    <textarea id="purchaseNotes" rows="2"
+                              placeholder="Purchase details"></textarea>
+                </div>
+
+            </div>
+
+            <button type="submit" class="supplier-primary-btn">
+                Save Purchase Record
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- PURCHASE HISTORY -->
+    <div class="supplier-panel">
+
+        <h3>Supplier Purchase History</h3>
+
+        <div class="supplier-table-wrapper">
+
+            <table class="supplier-table">
+
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Supplier</th>
+                        <th>Invoice</th>
+                        <th>Total Amount</th>
+                        <th>Paid</th>
+                        <th>Due</th>
+                        <th>Payment Method</th>
+                    </tr>
+                </thead>
+
+                <tbody id="supplierPurchaseTable">
+                    <tr>
+                        <td colspan="7">No purchase records found.</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     PHASE 10: CUSTOMER MANAGEMENT
+===================================== -->
+
+<section id="customers" class="page-section">
+
+    <div class="page-header">
+        <div>
+            <h2>Customer Management</h2>
+            <p>Manage customer profiles, orders and spending history.</p>
+        </div>
+    </div>
+
+    <!-- CUSTOMER SUMMARY -->
+    <div class="customer-summary">
+
+        <div class="customer-summary-card">
+            <p>Total Customers</p>
+            <h2 id="totalCustomers">0</h2>
+        </div>
+
+        <div class="customer-summary-card">
+            <p>Total Customer Orders</p>
+            <h2 id="customerTotalOrders">0</h2>
+        </div>
+
+        <div class="customer-summary-card">
+            <p>Customer Spending</p>
+            <h2 id="customerTotalSpending">৳0.00</h2>
+        </div>
+
+    </div>
+
+    <!-- ADD CUSTOMER -->
+    <div class="customer-panel">
+
+        <h3 id="customerFormTitle">Add New Customer</h3>
+
+        <form id="customerForm">
+
+            <input type="hidden" id="customerId">
+
+            <div class="customer-form-grid">
+
+                <div class="form-group">
+                    <label>Customer Name</label>
+                    <input type="text" id="customerNameInput"
+                           placeholder="Enter customer name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="customerPhoneInput"
+                           placeholder="Enter phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="customerEmailInput"
+                           placeholder="customer@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Customer Type</label>
+                    <select id="customerType">
+                        <option value="Regular">Regular</option>
+                        <option value="VIP">VIP</option>
+                        <option value="Corporate">Corporate</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Customer Address</label>
+                    <textarea id="customerAddressInput" rows="3"
+                              placeholder="Enter customer address"></textarea>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Notes</label>
+                    <textarea id="customerNotes" rows="2"
+                              placeholder="Customer preferences or additional notes"></textarea>
+                </div>
+
+            </div>
+
+            <div class="customer-form-actions">
+
+                <button type="submit" class="customer-primary-btn"
+                        id="customerSaveBtn">
+                    Save Customer
+                </button>
+
+                <button type="button" class="customer-cancel-btn"
+                        onclick="resetCustomerForm()">
+                    Cancel
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- CUSTOMER RECORDS -->
+    <div class="customer-panel">
+
+        <div class="customer-list-header">
+            <h3>Customer Records</h3>
+
+            <input type="text" id="customerSearch"
+                   placeholder="Search by name or phone...">
+        </div>
+
+        <div class="customer-table-wrapper">
+
+            <table class="customer-table">
+
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Type</th>
+                        <th>Total Orders</th>
+                        <th>Total Spending</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="customerTableBody">
+                    <tr>
+                        <td colspan="7">Loading customers...</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- CUSTOMER ORDER HISTORY -->
+    <div class="customer-panel">
+
+        <div class="customer-list-header">
+            <h3 id="customerHistoryTitle">Customer Order History</h3>
+            <button type="button" class="customer-cancel-btn"
+                    onclick="clearCustomerHistory()">
+                Clear Selection
+            </button>
+        </div>
+
+        <div class="customer-table-wrapper">
+
+            <table class="customer-table">
+
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Date</th>
+                        <th>Order Type</th>
+                        <th>Amount</th>
+                        <th>Payment</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="customerHistoryTable">
+                    <tr>
+                        <td colspan="6">
+                            Select a customer to view order history.
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+        </div>
+
+        <footer class="footer">
+            FoodPoint Restaurant POS &copy; <span id="year"></span>
+            <span>Management System</span>
+        </footer>
+
+    </main>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/order.js"></script>
+<script src="js/kitchen.js"></script>
+<script src="js/billing.js"></script>
+<script src="js/inventory.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/records.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/suppliers.js"></script>
+</body>
+</html>

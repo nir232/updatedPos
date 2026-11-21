@@ -1,0 +1,288 @@
+
+
+/* =====================================
+   PHASE 4: BILLING SYSTEM
+===================================== */
+
+.billing-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.5fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.billing-order-panel,
+.billing-details-panel,
+.payment-history-panel {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.billing-order-panel h3,
+.billing-details-panel h3,
+.payment-history-panel h3 {
+    margin: 0 0 10px;
+}
+
+.billing-help {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.billing-order-card {
+    border: 1px solid #eee;
+    border-radius: 9px;
+    padding: 13px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.billing-order-card:hover,
+.billing-order-card.selected {
+    border-color: #f97316;
+    background: #fff8f2;
+}
+
+.billing-order-card strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.billing-order-card small {
+    color: #777;
+    line-height: 1.7;
+}
+
+.billing-empty {
+    text-align: center;
+    padding: 35px 10px;
+    color: #888;
+}
+
+.billing-order-header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background: #f8f8f8;
+    padding: 14px;
+    border-radius: 9px;
+    margin: 18px 0;
+}
+
+.billing-order-header div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.billing-order-header span {
+    color: #888;
+    font-size: 12px;
+}
+
+.billing-order-header strong {
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.billing-details-panel h4,
+.payment-section h4 {
+    margin: 20px 0 12px;
+}
+
+.billing-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.billing-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 450px;
+}
+
+.billing-table th,
+.billing-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-size: 13px;
+}
+
+.billing-table th {
+    background: #f8f8f8;
+    color: #555;
+}
+
+.billing-calculation {
+    max-width: 360px;
+    margin: 20px 0 20px auto;
+}
+
+.billing-calculation > div,
+.payment-result > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+}
+
+.billing-discount-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.billing-discount-input input {
+    width: 110px;
+    padding: 9px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+}
+
+.billing-grand-total {
+    border-top: 1px solid #ddd;
+    margin-top: 8px;
+    padding-top: 15px !important;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.billing-grand-total strong {
+    color: #f97316;
+}
+
+.payment-section {
+    border-top: 1px solid #eee;
+    padding-top: 5px;
+}
+
+.payment-section label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 14px 0 7px;
+}
+
+.payment-section input,
+.payment-section select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+}
+
+.payment-result {
+    margin-top: 12px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 5px 12px;
+}
+
+.payment-result strong {
+    color: #218344;
+}
+
+.complete-payment-btn {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    background: #f97316;
+    color: white;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.complete-payment-btn:hover {
+    background: #ea580c;
+}
+
+.complete-payment-btn:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+.billing-no-orders {
+    text-align: center;
+    padding: 20px 10px;
+    color: #888;
+    font-size: 13px;
+}
+
+.receipt-print-area {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .billing-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .billing-order-header {
+        grid-template-columns: 1fr;
+    }
+
+    .billing-calculation {
+        max-width: 100%;
+    }
+}
+
+/* PRINT RECEIPT */
+@media print {
+    body * {
+        visibility: hidden !important;
+    }
+
+    #receiptPrintArea,
+    #receiptPrintArea * {
+        visibility: visible !important;
+    }
+
+    #receiptPrintArea {
+        display: block !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        color: #000;
+        background: #fff;
+        padding: 15px;
+        font-family: Arial, sans-serif;
+    }
+
+    #receiptPrintArea table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    #receiptPrintArea th,
+    #receiptPrintArea td {
+        border-bottom: 1px solid #ddd;
+        padding: 7px 3px;
+        text-align: left;
+        font-size: 12px;
+    }
+
+    #receiptPrintArea .receipt-center {
+        text-align: center;
+    }
+
+    #receiptPrintArea .receipt-total {
+        text-align: right;
+        margin-top: 15px;
+        line-height: 1.8;
+    }
+}

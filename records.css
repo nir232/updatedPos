@@ -1,0 +1,262 @@
+
+
+/* =====================================
+   PHASE 7: REPORTS & RECORDS
+===================================== */
+
+.report-filter-panel {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(140px, 1fr));
+    gap: 15px;
+    align-items: end;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.report-filter-panel .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.report-filter-panel label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+}
+
+.report-filter-panel input,
+.report-filter-panel select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    outline: none;
+}
+
+.report-filter-panel input:focus,
+.report-filter-panel select:focus {
+    border-color: #f07836;
+}
+
+.report-filter-actions {
+    display: flex;
+    gap: 8px;
+    grid-column: 1 / -1;
+}
+
+.report-filter-actions button,
+.report-toolbar button,
+.report-panel-heading button {
+    background: #f07836;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.report-filter-actions button:last-child {
+    background: #eeeeee;
+    color: #444;
+}
+
+.report-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.report-card {
+    background: #fff;
+    padding: 22px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+}
+
+.report-card p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.report-card h2 {
+    color: #f07836;
+    font-size: 25px;
+    overflow-wrap: anywhere;
+}
+
+.report-toolbar,
+.report-panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.report-toolbar {
+    margin: 25px 0 15px;
+}
+
+.report-toolbar h3,
+.report-panel h3 {
+    color: #333;
+    font-size: 17px;
+}
+
+.report-toolbar > div {
+    display: flex;
+    gap: 8px;
+}
+
+.report-panel {
+    background: #fff;
+    padding: 22px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.report-panel > h3 {
+    margin-bottom: 18px;
+}
+
+.report-panel-heading {
+    margin-bottom: 18px;
+}
+
+.report-panel-heading input {
+    max-width: 280px;
+    width: 100%;
+    padding: 10px 13px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    outline: none;
+}
+
+.report-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.report-table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+}
+
+.report-table th,
+.report-table td {
+    padding: 13px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+}
+
+.report-table th {
+    background: #f8f8f8;
+    color: #555;
+    font-weight: 600;
+}
+
+.report-table td {
+    color: #555;
+}
+
+.report-empty {
+    text-align: center !important;
+    color: #888 !important;
+    padding: 25px !important;
+}
+
+.report-status {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 15px;
+    background: #fff0df;
+    color: #b96722;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.report-status.paid {
+    background: #e5f7ec;
+    color: #21864b;
+}
+
+.report-status.unpaid {
+    background: #ffe8e8;
+    color: #d13c3c;
+}
+
+@media (max-width: 1000px) {
+    .report-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .report-filter-panel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .report-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .report-filter-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .report-toolbar,
+    .report-panel-heading {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .report-toolbar > div {
+        flex-wrap: wrap;
+    }
+
+    .report-panel {
+        padding: 15px;
+    }
+}
+
+/* Keep printed reports clean */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #reports,
+    #reports * {
+        visibility: visible;
+    }
+
+    #reports {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: #fff;
+    }
+
+    #reports .report-filter-panel,
+    #reports .report-toolbar button,
+    #reports .report-panel-heading button,
+    #reports .report-panel-heading input {
+        display: none !important;
+    }
+
+    #reports .report-panel,
+    #reports .report-card {
+        break-inside: avoid;
+        box-shadow: none;
+    }
+}
